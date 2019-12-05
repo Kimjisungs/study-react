@@ -4,7 +4,7 @@
 
 **hello.js**  
 
-```react
+```javascript
 import React from 'react';
 
 function Hello({ color, name }) {
@@ -41,7 +41,7 @@ export default Wrapper;
 
 **App.js**
 
-```react
+```javascript
 import React from 'react';
 import Hello from './Hello';
 import Wrapper from './Wrapper';
@@ -65,7 +65,7 @@ type, props, child가 있다.
 
 #### props - props 전달
 
-```
+```javascript
 <Hello name="react" color="red">
 
 ------------------------------------------
@@ -81,7 +81,7 @@ component로 사용될 const Hello 함수는 import React 의 props의 값으로
 
 #### props가 전달되지 않을때 default 값
 
-```
+```javascript
 Hello.defaultProps = {
   name: '이름없음'
 }
@@ -91,7 +91,7 @@ Hello.defaultProps = {
 
 #### props - children
 
-```
+```react
 import React from 'react';
 import Hello from './Hello';
 import Wrapper from '.Wrapper';
@@ -101,7 +101,7 @@ import Wrapper from '.Wrapper';
     <Hello color="blue" />
 </Wrapper>
 
-----------------------------------------------
+{/*----------------------------------------------*/}
 
 import React from 'react';
 
