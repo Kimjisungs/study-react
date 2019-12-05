@@ -2,14 +2,14 @@
 
 상태를 관리
 
-```
+```javascript
 function App(props) {
   return (
    <Counter />
   )
 }
 
---------------------------------
+//--------------------------------
 
 import React, { useState } from 'react';
 

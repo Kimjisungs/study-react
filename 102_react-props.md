@@ -91,7 +91,7 @@ Hello.defaultProps = {
 
 #### props - children
 
-```react
+```javascript
 import React from 'react';
 import Hello from './Hello';
 import Wrapper from '.Wrapper';
@@ -101,7 +101,7 @@ import Wrapper from '.Wrapper';
     <Hello color="blue" />
 </Wrapper>
 
-{/*----------------------------------------------*/}
+//----------------------------------------------
 
 import React from 'react';
 
