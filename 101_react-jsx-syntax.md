@@ -16,19 +16,19 @@ import React from 'react'
 
 5. component를 만든다. 컴포넌트는 항상 대문자로 시작해야 한다.  
    내가 만들때에만 무조건 대문자로 시작해야 한다.  
-   ex) const Header <Header>
+   ex) const Header < Header >
 
-6. 태그는 꼭 닫혀있어야한다.
-   ex) <div></div>, <br />, <input />
+6. 태그는 꼭 닫혀있어야한다.  
+   ex) < div >< /div >, < br / >, < input / >
 
 7. 두개 이상의 태그는 하나의 태그로 감싸져있어야 한다.  
 
-   ~~~
+   ~~~javascript
    <div>
    	<Hello />
    </div>
    
-   or fragment
+   // or fragment
    
    <>
    	<Hello />
@@ -37,7 +37,7 @@ import React from 'react'
 
 8. 주석 처리방법   
 
-   ~~~
+   ~~~javascript
    <>
     {/* 어쩌고 저쩌고 */}
     
@@ -48,3 +48,4 @@ import React from 'react'
    ~~~
 
    
+
