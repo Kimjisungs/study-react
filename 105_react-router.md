@@ -66,13 +66,18 @@ const url = `https://youtube.com/embed/${id || v}`
 
    match가 되는 파라미터를 가지고 와라.
 
-2. **
+2. **queryString과 같이 사용될때**  
+   -react router에서 정의되어있는객체 qs.parse(props.location.search)    
+   qs.parse는 그 다음에 나오는 queryString을 파싱해준다.
 
-#### history.push()
+#### history.push(), history,GoBack()
 
 하이퍼링크 타고 페이지가 바뀌는게 아니라 주소만 바뀌는것.
 
 **특징** : 콘솔 로그가 그대로 남아있고, 페이지가 refresh되지 않는다.
+
+**history.push(/주소)**  
+브라우저의 history에다가 url을 변경 된것 처럼 보여주는 작업.
 
 ```
 props.history.push(`주소`); //setState가 아니라 브라우저 history에 메소드를 사용해서 url 변경
@@ -82,4 +87,10 @@ props.history.push(`주소`); //setState가 아니라 브라우저 history에 �
 
 -결론: app.js 클릭했을때 setState를 해주는게 아니라 브라우저 history.push 메소드를 사용해서 URL을 변경시키는 요청을 한다. 해당하는 컴포넌트가 독립적인 컴포넌트가 됬으므로 상위 컴포넌트에서 받을 필요 없이 url만 파싱하면된다.  파싱하는 방법이 Route path에서 정의된 변수들을 사용하면 되고 이 변수들은 이 라우트라는 컴포넌트를 쓸 때에만 리엑트 라우터가 동적으로 props라는 객체 안에 매치에 params로 객체로 정의되어있기 때문에 비구조화를 이용해서 사용할 수 있다.
 
- 
+ -라우터에 일치하는 component가 랜더링 됨. 경로와 컴포넌트만 매칭하면 되고, 페이지에 맞는 독립적인 컴포넌트로 분리할 수 있음.
+
+
+
+#### SPA
+
+페이지는 싱글이다. 다른 페이지로 전환되지 않음. 사용자로 하여금 주소 이동,  공유도 해야함. 
