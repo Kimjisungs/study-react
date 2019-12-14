@@ -29,7 +29,11 @@ npm i uuid     // uuid (key값 대신 이용하는 프로그램) key 값에 uuid
 npm i lodash   // { debounce }는 마지막 글자가 왔을때 검색되는 것. lodash라는 모델을 다운받아야한다. api 같은 것이다. 
 ```
 
+리엑트 라우터
 
+~~~
+npm i react-router
+~~~
 
 
 
