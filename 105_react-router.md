@@ -1,8 +1,4 @@
-### 설치
-
-#### react router
-
-자체적인 상태는 없이 주소에 대해서 랜더링해줘요라고 정의만 내림
+### react router
 
 ```
 npm i react-router //react router 설치
@@ -35,7 +31,7 @@ import {
 
 -- react router 안의 route 컴포넌트가 props를 path를 감지하여 그 component를 컴포넌트 props값의 컴포넌트에 전달한다.
 
-#### api 주소 접근
+#### api 주소 접근 방법
 
 ```
 /watch/:id                   //rest api 데이터 전달법
@@ -76,12 +72,48 @@ const url = `https://youtube.com/embed/${id || v}`
 
 **특징** : 콘솔 로그가 그대로 남아있고, 페이지가 refresh되지 않는다.
 
-**history.push(/주소)**  
-브라우저의 history에다가 url을 변경 된것 처럼 보여주는 작업.
+
+
+### history.push(/주소)
+
+ 브라우저의 history에다가 url을 변경 된것 처럼 보여주는 작업.
+
+window.location 하이퍼링크와는 다름. 주소가 바뀌는것 처럼 보이나 브라우저 히스토리만 추가해서 그리고 back버튼도 사용할 수 있다. 브라우저에 기록만 남기고 주소를 바뀌는것 처럼 보이게 하고 히스토리가 있다라는 것은 뒤로가기 버튼을 사용할 수 있는 효과가 있다.
 
 ```
 props.history.push(`주소`); //setState가 아니라 브라우저 history에 메소드를 사용해서 url 변경
+
+props.history.GoBack() 뒤로가기
 ```
+
+#### Route의 컴포넌트의 기본적인 props match, history, location
+
+**history, match, location**
+
+전달 방법 -> route path에게
+
+- props.history.push는 react-router-dom 에 정의되어있는   
+  { withRouter } 함수를 사용해야한다. history.push는 리엑트 자체에 정의되어 있지않기 때문에 이걸 사용하는 방법은  
+
+  ```
+  export default widthRouter(App);
+  
+  //history.push는 리엑트에 정의되어있지 않고 리엑트 라우터 돔에 정의되어있다. App를 인자로 받아서 실행해서 모듈로 넘김
+  ```
+
+
+
+**withRouter**
+
+```
+import { withRouter } from 'react-router-dom';
+
+export default widthRouter(Main)
+```
+
+withRouter 함수에 실행될 함수 인자를 넘겨주어야 react component에 정의되어있지 않은 props의 history와 같은 react component에 정의되어 있지 않은 컴포넌트를 사용할 수 있다. withRouter함수가 이때 실행될 함수를 인자로 넘기고 props도 전달한다.
+
+
 
 로컬 스토리지 : 클라이언트에 데이터 저장, 많이 쓰이는 방법은 아님
 
@@ -89,8 +121,9 @@ props.history.push(`주소`); //setState가 아니라 브라우저 history에 �
 
  -라우터에 일치하는 component가 랜더링 됨. 경로와 컴포넌트만 매칭하면 되고, 페이지에 맞는 독립적인 컴포넌트로 분리할 수 있음.
 
-
+-URL이 바뀌는 시점에 Router가 작동한다.
 
 #### SPA
 
 페이지는 싱글이다. 다른 페이지로 전환되지 않음. 사용자로 하여금 주소 이동,  공유도 해야함. 
+
