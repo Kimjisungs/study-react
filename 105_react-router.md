@@ -134,7 +134,7 @@ withRouter 함수에 실행될 함수 인자를 넘겨주어야 react component�
 ~~~
 .env 파일
 
-REACT_APP_YOUTUBE_API_KEY=나의키값
+REACT_APP_YOUTUBE_API_KEY=나의
 
    const params = {
       key: process.env.REACT_APP_YOUTUBE_API_KEY,
