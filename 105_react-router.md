@@ -31,7 +31,7 @@ import {
 
 -- react router 안의 route 컴포넌트가 props를 path를 감지하여 그 component를 컴포넌트 props값의 컴포넌트에 전달한다.
 
-#### api 주소 접근 방법
+### api 주소 접근 방법
 
 ```
 /watch/:id                   //rest api 데이터 전달법
@@ -41,7 +41,7 @@ import {
 1. :다음에 임의의 id를 쓸 수 있다. 
 2. ?v=sasfsaf // 변수를 여러개를 보낼 수 있다. 공유하기나 그런 옵션들은 많이 들어간다. 이것들까지 사용하는 방법
 
-#### queryString
+### queryString
 
 ```
 npm install query-string
@@ -103,7 +103,7 @@ props.history.GoBack() 뒤로가기
 
 
 
-**withRouter**
+### withRouter
 
 ```
 import { withRouter } from 'react-router-dom';
@@ -126,4 +126,22 @@ withRouter 함수에 실행될 함수 인자를 넘겨주어야 react component�
 #### SPA
 
 페이지는 싱글이다. 다른 페이지로 전환되지 않음. 사용자로 하여금 주소 이동,  공유도 해야함. 
+
+### .env
+
+환경변수
+
+~~~
+.env 파일
+
+REACT_APP_YOUTUBE_API_KEY=나의키값
+
+   const params = {
+      key: process.env.REACT_APP_YOUTUBE_API_KEY,
+      q: query,
+      part: `snippet`,
+      maxResults: 4,
+    }
+
+~~~
 
