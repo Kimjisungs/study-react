@@ -1,3 +1,42 @@
+### RouterComponent
+
+```
+<BrowserRouter>
+basename: string
+getUserConfirmation: func
+forceRefresh: bool
+keyLength: number
+children: node
+
+// HTML5 History Api 사용, 브라우저 주소 표시줄의 경로를 바꿔 줄 수 있음. 서버에 요청하지 않고.
+```
+
+```
+<HashRouter>
+basename: string
+getUserConfirmation: func
+hashType: string
+children: node
+
+//주소 뒤에 hash태그삽입. 옛날 브라우저 전용
+```
+
+```
+<MemoryRouter>
+initialEntries:array
+initialIndex: number
+getUserConfirmation: func
+keyLength: number
+children: node
+
+//브라우저 주소와는 무관함, 일체 건드리지 않음
+//임베디드 웹앱, 리액트 네이티브 등에서 사용
+```
+
+
+
+
+
 ## react router
 
 ```javascript
@@ -29,6 +68,37 @@ const App = () => (
 
 
 
+### router 부가기능
+
+1. **history**객체  
+   -특정 함수를 호출했을때 뒤로가거나 페이지 이탈을 방지할 수 있다.   
+
+   ```
+   history.go // 앞혹은 뒤 go(-1)뒤 -2는 두번뒤
+   history.goBack() //뒤로가기
+   history.length 방문기록 길이
+   history.location 자신이 있는 경로 혹은 위치
+   history.push() // 특정경로로 이동 방문 기록을 남긴다.
+   history.replace() // 방문페이지 기록남기지 않는다. 처음 시작점으로 돌아간다.
+   
+   history.block() // 사용자 이탈 방지
+   ex)
+   
+   import { useEffect } from 'react'
+   useEffect( ()=> {
+   	const unblock = history.block('정말 나갈건가요?')
+   	return () => {
+   		unblock();
+   	}
+   })
+   ```
+
+   
+
+   
+
+
+
 ### query-string
 
 ```javascript
@@ -48,6 +118,21 @@ console.log(parsed)//{name : lee}
 ### withRouter
 
 react-router-dom 의 Route가 아닌 컴포넌트에서 Route에서 사용하는 객체 - location, match, history를 사용해야 하려면, withRouter라는 HOC를 사용해야 한다.
+
+라우터 컴포넌트가 아닌곳에서사용.
+
+```
+import { widthRouter } from 'react-router-dom';
+
+function WithRouterSample({ location, match, history}) {}
+
+export default widthRouter(widthRouterSample);
+
+여기서 location과 match는 
+```
+
+-router가사용되지 않는곳에서 조건부로 이동할 때 사용된다.   
+route로 사용되지 않은 컴포넌트에서. 로그인이 성공했을때 특정 경로로 가고, 성공하지 않았을때 가만히 있고 싶다.
 
 
 
