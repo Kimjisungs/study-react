@@ -60,7 +60,7 @@ const App = () => (
 ```
 
 1. BrowserRouter as Router : 요청 경로와 렌더링할 컴포넌트를 설정한다. 라우터 컴포넌트 안에서 어떠한 주소에 대해서 해당 컴포넌트를 사용할 수 있음.
-2. Swtich: Switch문과 쓰임세가 같다. 하위에 라우터 중 하나를 선택한다
+2. Swtich: Switch문과 쓰임세가 같다. 하위에 라우터 중 하나를 선택한다. page를 못찾았을때 notFound를 보여줄때 유용.
 3. Route :  요청 경로를 다른 경로로 리다이렉션한다
 4. Route.props :   history, location, match
    - location.search:  query - string을 반환 
@@ -94,10 +94,6 @@ const App = () => (
    ```
 
    
-
-   
-
-
 
 ### query-string
 
@@ -133,6 +129,29 @@ export default widthRouter(widthRouterSample);
 
 -router가사용되지 않는곳에서 조건부로 이동할 때 사용된다.   
 route로 사용되지 않은 컴포넌트에서. 로그인이 성공했을때 특정 경로로 가고, 성공하지 않았을때 가만히 있고 싶다.
+
+
+
+### NavLink
+
+```
+import { NavLink, Route } from 'react-router-dom'
+
+
+<NavLink
+	to="profiles/name"
+	activeStyle={{ background:'blue', color: 'white' }}
+	activeClassName="active"
+	isActive={(match, location) => {
+		return match.params = 어쩌고 true false반환해야함
+	}}
+	ex 경로가 to="/"되어있으면 route컴포넌트와같이 exact를 넣어줘야함
+>
+	링크
+</NavLink>
+```
+
+active되었을때 추가 가능
 
 
 
