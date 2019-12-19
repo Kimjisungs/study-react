@@ -61,7 +61,7 @@
 
    ### reducers/counter.js 리듀서 파일 생성
 
-   ``` react
+   ```react
    import { ADD } from '../actions'
    
    const INITIAL_STATE = {
@@ -86,7 +86,7 @@
 
    
 
-   ~~~react
+   ```react
    import React from 'react';
    import { connect } from 'react-redux';
    import { bindActionCreators } from 'redux';
@@ -115,7 +115,7 @@
    }
    
    export default connect(mapStateToProps, mapDispatchToProps)(Counter);
-   ~~~
+   ```
 
    
 
@@ -135,7 +135,7 @@
 
    
    
-   ~~~
+   ```
    <Provider store={createStore(reducers)}>
    	<Counter/>
    </Provider>
@@ -150,35 +150,7 @@
    )
    
    
-   ~~~
-   
-   
-   
-   
-   
-   ### dispatch
-   
-   #### redux
-   
-   ~~~
-   store.dispatch({type: ADD, val})  
-   ~~~
-   
-   dispatch의 파라미터로 reducer에게 넘겨야 한다
-   
-   #### 
-   
-   ~~~
-   
-   
-   
-   ~~~
-   
-   
-   
-   
-   
-   
+   ```
    
    
    
